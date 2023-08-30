@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { INestApplication } from '@nestjs/common';
+import { HttpStatus, INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
 import { AppModule } from './../src/app.module';
 
@@ -20,5 +20,11 @@ describe('AppController (e2e)', () => {
       .get('/')
       .expect(200)
       .expect('Hello World!');
+  });
+  it('/health (GET) => retorna 200', () => {
+    return request(app.getHttpServer())
+      .get('/health')
+      .expect(HttpStatus.OK)
+      .expect("I'm okay!");
   });
 });
