@@ -41,10 +41,10 @@ export class UsersService {
     return await this.usersRepository.update(id, updateUser)
   }
 
-  async remove(id: number) {
-    // Nessa função, chamar outros deletes de outros módulos?
-    // Checar existência de usuário com o id.
-    // Checar se existe credenciais, cartões e notas vinculadas ao usuário.
-    return await this.usersRepository.remove(id)
-  }
+  // async remove(id: number) {
+  //   // Nessa função, chamar outros deletes de outros módulos?
+  //   // Checar existência de usuário com o id.
+  //   // Checar se existe credenciais, cartões e notas vinculadas ao usuário.
+  //   return await this.usersRepository.remove(id)
+  // }
 }
